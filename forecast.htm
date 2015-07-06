@@ -11,7 +11,7 @@
     </tr>
     <tr ng-repeat="x in weatherResult.list">
     <td>{{ convertTodate(x.dt) | date: 'MMM d,y'}}</td>
-    <td>{{convertToCelsius(x.temp.day) }}C</td>
+    <td>{{convertToCelsius(x.temp.day) }} &#8451</td>
      <td>{{x.weather[0].description}}</td>
   </tr>
     </table>
