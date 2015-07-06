@@ -1,6 +1,20 @@
-Forecast for {{city}} for following days
-<ul>
-  <li ng-repeat="x in weatherResult.list">
-    {{ convertTodate(x.dt) | date: 'MMM d,y'+ ': ' + convertToCelsius(x.temp.day) }}C
-  </li>
-</ul>
+<div class="row">
+    <div class="col-md-6 col-md-offset-1">
+       <h2> Forecast for {{city}}:</h2>
+        <hr/>
+<div class="container">           
+  <table class="table table-striped">
+   <tr>
+    <th>Date</th>
+    <th>Temperature</th>
+    <th>Description</th>
+    </tr>
+    <tr ng-repeat="x in weatherResult.list">
+    <td>{{ convertTodate(x.dt) | date: 'MMM d,y'}}</td>
+    <td>{{convertToCelsius(x.temp.day) }}C</td>
+     <td>{{x.weather[0].description}}</td>
+  </tr>
+    </table>
+</div>
+</div>
+    
